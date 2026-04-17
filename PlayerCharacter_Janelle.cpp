@@ -88,7 +88,7 @@ int PlayerCharacter::rollDice(int upper, int lower) {
 }
 
 void PlayerCharacter::printStats() {
-  ///print stats according to the output shown in the assignment
+  /// print stats according to the output shown in the assignment
   std::cout << "--------- Stats for " << getName() << " ---------" << std::endl;
 
   std::string raceString;
@@ -113,5 +113,10 @@ void PlayerCharacter::printStats() {
   std::cout << "Agility: " << agility << std::endl;
   std::cout << "Defense: " << defense << std::endl;
   std::cout << "----------------------------------" << std::endl;
+
+  /// create a new method that can be overriden by the children of PlayerCharacter class
+  virtual void performAction() {
+    std::cout << "I'm sorry, there's nothing I can do." << std::endl;
+  }
 }
 
