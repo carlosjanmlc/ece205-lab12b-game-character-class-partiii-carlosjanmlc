@@ -8,7 +8,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
-#include "PlayerCharacter.hpp"
+#include "PlayerCharacter_Janelle.hpp"
 
 using namespace std;
 
@@ -27,7 +27,7 @@ int main()
     //define variables
     cout << "Enter a name for your character: " << endl;
     cin >> characterName;
-    cout << "Enter a race for your character (0 = wizard, 1 = elf, 2 = human, 3 = orc): ";
+    cout << "Enter a race for your character (0 = wizard, 1 = witch, 2 = mermaid, 3 = human): ";
     cin >> characterRace;
 
     //create PlayerCharacter object

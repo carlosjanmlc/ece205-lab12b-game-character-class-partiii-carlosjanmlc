@@ -3,7 +3,7 @@
 //  Lab 11a - Game Character Class Part II - ECE 205 - Spring 2026
 //
 ///
-/// @file    PlayerCharacter.hpp
+/// @file    PlayerCharacter_Janelle.hpp
 /// @author  Janelle Carlos <carlosjm@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -25,9 +25,9 @@ public: // accessible + use pass-by-value references
     enum class Race {
         /// add race values
         WIZARD = 0,
-        ELF = 1,
-        HUMAN = 2,
-        ORC = 3,
+        WITCH = 1,
+        MERMAID = 2,
+        HUMAN = 3,
     };
 
     Race race; // variable type (enum - Race) variable name (race)

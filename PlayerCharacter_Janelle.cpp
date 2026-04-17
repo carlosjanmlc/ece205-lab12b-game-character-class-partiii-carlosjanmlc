@@ -3,11 +3,11 @@
 //  Lab 11a - Game Character Class Part II - ECE 205 - Spring 2026
 //
 ///
-/// @file    PlayerCharacter.cpp
+/// @file    PlayerCharacter_Janelle.cpp
 /// @author  Janelle Carlos <carlosjm@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "PlayerCharacter.hpp"
+#include "PlayerCharacter_Janelle.hpp"
 #include <iostream>
 #include <random>
 
@@ -65,13 +65,13 @@ void PlayerCharacter::setRace(int& newRaceCode) {
       race = Race::WIZARD;
       break;
     case 1:
-      race = Race::ELF;
+      race = Race::WITCH;
       break;
     case 2:
-      race = Race::HUMAN;
+      race = Race::MERMAID;
       break;
     case 3:
-      race = Race::ORC;
+      race = Race::HUMAN;
       break;
     default:
       std::cout << "Invalid choice." << std::endl;
@@ -88,7 +88,7 @@ int PlayerCharacter::rollDice(int upper, int lower) {
 }
 
 void PlayerCharacter::printStats() {
-  ///print stats according to the output shown in the assignment
+  /// print stats according to the output shown in the assignment
   std::cout << "--------- Stats for " << getName() << " ---------" << std::endl;
 
   std::string raceString;
@@ -97,14 +97,14 @@ void PlayerCharacter::printStats() {
     case Race::WIZARD:
       raceString = "Wizard";
       break;
-    case Race::ELF:
-      raceString = "Elf";
+    case Race::WITCH:
+      raceString = "Witch";
+      break;
+    case Race::MERMAID:
+      raceString = "Mermaid";
       break;
     case Race::HUMAN:
       raceString = "Human";
-      break;
-    case Race::ORC:
-      raceString = "Orc";
       break;
   }
   std::cout << "Race: " << raceString << std::endl;
@@ -113,5 +113,10 @@ void PlayerCharacter::printStats() {
   std::cout << "Agility: " << agility << std::endl;
   std::cout << "Defense: " << defense << std::endl;
   std::cout << "----------------------------------" << std::endl;
+
+  /// create a new method that can be overriden by the children of PlayerCharacter class
+  virtual void performAction() {
+    std::cout << "I'm sorry, there's nothing I can do." << std::endl;
+  }
 }
 
