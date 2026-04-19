@@ -25,6 +25,25 @@ Tasks for this lab:
 2. Update the PlayerCharacter class by creating a new method: performAction() that overrides any children of the PlayerCharacter class
 3. Share repo with teammates and update the author info in the files + specify who owns each PlayerCharacter file
 4. Clone a team member's repo
-6. Implement your derived subclasses that inherit from teammate's Character class (add 2-4 new derived classes that inherit teammate's PlayerCharacter [____]
+6. Implement your derived subclasses that inherit from teammate's Character class (add 2-4 new derived classes that inherit teammate's PlayerCharacter + override performAction + each class must have at least 2 unique attributes and 2 unique methods)
 7. Add/Update teammate's README file
 8. Give instructions to the user that explain the new class' capabilities + update main() to interact with user
+
+example:
+Enter a name for your character: Bob  
+Enter a race for your character (0 = Dwarf, 1 = Elf, 2 = Human, 3 = Orc): 1 
+Enter a profession for your character (0 = Cleric, 1 = Fighter, 2 = Rogue, 3 = Wizard): 0  
+
+---------- Stats for Bob ---------- 
+Race: Elf 
+Health: 100 
+Strength: 9 
+Agility: 3 
+Defense: 1 
+-----------------------------------  
+
+Bob the Cleric: Hello, I’m Bob.   
+Game Master: What would you like Bob to do? (0 = Cast Spell, 1 = Teleport): 0  
+Game Master: You need to roll at least a 10 to successfully cast a spell.  
+
+You rolled a 4. Your spell failed!!! Practice your craft more.
