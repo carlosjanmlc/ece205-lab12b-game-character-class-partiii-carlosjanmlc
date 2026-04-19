@@ -35,11 +35,11 @@ Enter a race for your character (0 = Dwarf, 1 = Elf, 2 = Human, 3 = Orc): 1
 Enter a profession for your character (0 = Cleric, 1 = Fighter, 2 = Rogue, 3 = Wizard): 0  
 
 ---------- Stats for Bob ---------- 
-Race: Elf 
-Health: 100 
-Strength: 9 
-Agility: 3 
-Defense: 1 
+- Race: Elf 
+- Health: 100 
+- Strength: 9 
+- Agility: 3 
+- Defense: 1 
 -----------------------------------  
 
 Bob the Cleric: Hello, I’m Bob.   
