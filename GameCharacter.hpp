@@ -41,4 +41,3 @@ class GameCharacter {
     //characters like puppets. final specifier ensures that it may not be overridden by derived classes.
     virtual void speak(std::string& response) final;
 };
-

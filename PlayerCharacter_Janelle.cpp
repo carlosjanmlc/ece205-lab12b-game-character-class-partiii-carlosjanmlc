@@ -12,15 +12,19 @@
 #include <random>
 
 // constructor
-PlayerCharacter::PlayerCharacter(std::string& newName, int& raceCode) : GameCharacter(newName) {
+PlayerCharacter::PlayerCharacter(std::string& newName, int& raceCode, int& professionNum) : GameCharacter(newName) {
+
 
 	setRace(raceCode);
+  setProfession(professionNum);
 	health = 100;
 
 	// using rollDice to randomize a value from 0-10
-	strength = rollDice(10, 0);
-	agility = rollDice(10, 0);
-	defense = rollDice(10, 0);
+	strength = 10;
+	agility = 10;
+  wisdom = 10;
+  intelligence = 10;
+	defense = 10;
 }
 
 // METHODS
@@ -35,11 +39,20 @@ int PlayerCharacter::getHealth() const {
 int PlayerCharacter::getAgility() const {
   return agility;
 }
+int PlayerCharacter::getWisdom() const {
+  return wisdom;
+}
+int PlayerCharacter::getIntelligence() const {
+  return intelligence;
+}
 int PlayerCharacter::getDefense() const {
   return defense;
 }
 PlayerCharacter::Race PlayerCharacter::getRace() const {
   return race;
+}
+PlayerCharacter::Profession PlayerCharacter::getProfession() const {
+  return profession;
 }
 
 // define the class' setter methods
@@ -51,6 +64,12 @@ void PlayerCharacter::setHealth(int& newHealth) {
 }
 void PlayerCharacter::setAgility(int& newAgility) {
   agility = newAgility;
+}
+void PlayerCharacter::setWisdom(int& newWisdom) {
+  wisdom = newWisdom;
+}
+void PlayerCharacter::setIntelligence(int& newIntelligence) {
+  intelligence = newIntelligence;
 }
 void PlayerCharacter::setDefense(int& newDefense) {
   defense = newDefense;
@@ -78,6 +97,27 @@ void PlayerCharacter::setRace(int& newRaceCode) {
   }
 }
 
+// Kyla: Using set profession method from PlayerCharacter
+// to set user's number to their character's profession
+void PlayerCharacter::setProfession(int& newProfession) {
+  switch (newProfession) {
+    case 0:
+      profession = Profession::Barbarian;
+      break;
+    case 1:
+      profession = Profession::Cleric;
+      break;
+    case 2:
+      profession = Profession::Ranger;
+      break;
+    case 3:
+      profession = Profession::Sorcerer;
+      break;
+    default:
+      std::cout << "Invalid choice." << std::endl;
+  }
+}
+
 // dice roll between upper and lower
 int PlayerCharacter::rollDice(int upper, int lower) {
   // replace with random number generator
@@ -92,6 +132,7 @@ void PlayerCharacter::printStats() {
   std::cout << "--------- Stats for " << getName() << " ---------" << std::endl;
 
   std::string raceString;
+  std::string professionString;
 
   switch (race) { /// for an enum class: use the enum names, not numbers
     case Race::WIZARD:
@@ -107,16 +148,37 @@ void PlayerCharacter::printStats() {
       raceString = "Human";
       break;
   }
+
+  // Kyla: Added profession using their names
+  switch (profession) {
+    case Profession::Barbarian:
+      professionString = "Barbarian";
+      break;
+    case Profession::Cleric:
+      professionString = "Cleric";
+      break;
+    case Profession::Ranger:
+      professionString = "Ranger";
+      break;
+    case Profession::Sorcerer:
+      professionString = "Sorcerer";
+      break;
+  }
+
   std::cout << "Race: " << raceString << std::endl;
+  std::cout << "Profession: " << professionString << std::endl;
   std::cout << "Health: " << health << std::endl;
   std::cout << "Strength: " << strength << std::endl;
   std::cout << "Agility: " << agility << std::endl;
+  std::cout << "Wisdom: " << wisdom << std::endl;
+  std::cout << "Intelligence: " << intelligence << std::endl;
   std::cout << "Defense: " << defense << std::endl;
   std::cout << "----------------------------------" << std::endl;
+}
 
-  /// create a new method that can be overriden by the children of PlayerCharacter class
-  virtual void performAction() {
-    std::cout << "I'm sorry, there's nothing I can do." << std::endl;
-  }
+// Kyla: Moved function outside - Default performAction
+/// create a new method that can be overriden by the children of PlayerCharacter class
+void PlayerCharacter::performAction() {
+  std::cout << "I'm sorry, there's nothing I can do." << std::endl;
 }
 

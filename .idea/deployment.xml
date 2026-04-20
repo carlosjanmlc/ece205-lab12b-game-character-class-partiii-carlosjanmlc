@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="ECE205 (2e105b97-08e5-4a81-a6d0-5b64435093af)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.UJE9Pxh9EA/ece205-lab12b-game-character-class-partiii-carlosjanmlc" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
