@@ -1,27 +1,54 @@
 # ece205-lab12b-game-character-class-partiii-carlosjanmlc (Polymorphism)
 
-Now that a base PlayerCharacter class has already been created, this lab extends the design one level further by adding 
-profession-based subclasses that inherit from PlayerCharacter. The objective of this lab is to use polymorphism so that 
-each profession can perform its own specialized actions while still sharing common character traits from the parent classes.
+After a PlayerCharacter subclass has been created and is set to inherit from the GameCharacter base class, the objective of this lab is to use polymorphism to define specialized actions that the characters can perform based on their different professions.
 
-The goal of this lab is to:
+The goals of this lab:
+1. Create and manage a repo
+2. Share code with peers
+3. Work within the limits and design specifications of someone else's code
+4. Refactor someone else's code
+5. Write more classes in C++ and gain experience managing files in a growing project
 
-Write more classes in C++ and gain experience managing files in a growing project
-Work within the limits and design specifications of code that is not your own
-Refactor code that is your own
-Share code with teammates and build on a teammate’s PlayerCharacter class
-Use polymorphism by overriding a virtual performAction() method in derived classes
-For this lab, a teammate-provided PlayerCharacter class is used as the parent class, and four new subclasses were created 
-that represent different professions. Each subclass inherits the common character data from PlayerCharacter, such as name, 
-race, health, strength, agility, and defense, while also introducing its own unique attributes and methods.
+The team members will swap PlayerCharacter classes to be used to create another layer of subclasses with different professions.
 
-The main idea of this project is that all professions share the same base type, but each one behaves differently when 
-performAction() is called. This is accomplished through runtime polymorphism using a PlayerCharacter pointer in main.cpp. 
-Based on the profession selected by the user, the program creates the correct subclass object and then calls the overridden 
-performAction() method for that class. This follows the lab requirement to create profession-based subclasses that override 
-performAction().
+The final repo will contain:
+1. GameCharcter.hpp
+2. GameCharacter.cpp
+3. PlayerCharacter_Janelle.hpp (provided by another member)
+4. PlayerCharacter_Janelle.cpp (provided by another member) 
+5. main.cpp (add/update to teammates' repo)
+6. Source and Header files for each derived class created in this lab (added to teammate's repo)
 
-Your final program contains the following parts:
+Tasks for this lab:
+1. Create repo with files from Lab 11a
+2. Update the PlayerCharacter class by creating a new method: performAction() that overrides any children of the PlayerCharacter class
+3. Share repo with teammates and update the author info in the files + specify who owns each PlayerCharacter file
+4. Clone a team member's repo
+6. Implement your derived subclasses that inherit from teammate's Character class (add 2-4 new derived classes that inherit teammate's PlayerCharacter + override performAction + each class must have at least 2 unique attributes and 2 unique methods)
+7. Add/Update teammate's README file
+8. Give instructions to the user that explain the new class' capabilities + update main() to interact with user
+
+example:
+Enter a name for your character: Bob  
+Enter a race for your character (0 = Dwarf, 1 = Elf, 2 = Human, 3 = Orc): 1 
+Enter a profession for your character (0 = Cleric, 1 = Fighter, 2 = Rogue, 3 = Wizard): 0  
+
+---------- Stats for Bob ---------- 
+- Race: Elf 
+- Health: 100 
+- Strength: 9 
+- Agility: 3 
+- Defense: 1 
+-----------------------------------  
+
+Bob the Cleric: Hello, I’m Bob.   
+Game Master: What would you like Bob to do? (0 = Cast Spell, 1 = Teleport): 0  
+Game Master: You need to roll at least a 10 to successfully cast a spell.  
+
+You rolled a 4. Your spell failed!!! Practice your craft more.
+
+------------------------------------------
+## Your final program contains the following parts:
 
 GameCharacter.hpp – base class header provided from a previous lab
 GameCharacter.cpp – base class source file provided from a previous lab
@@ -32,6 +59,7 @@ Cleric.hpp / Cleric.cpp – profession subclass created for this lab
 Ranger.hpp / Ranger.cpp – profession subclass created for this lab
 Sorcerer.hpp / Sorcerer.cpp – profession subclass created for this lab
 main.cpp – allows the user to create and interact with the chosen profession class
+
 
 The program allows the user to create a character by entering a name, selecting a race, and then selecting a profession. 
 After the character is created, the program prints the character stats, greets the user, and then repeatedly asks the 
@@ -59,7 +87,8 @@ fight.
 
 --------------------------------------------------------
 ## Subclass Descriptions
-Barbarian: A fierce melee fighter who channels primal rage to devastate enemies. Due to their intense rage and fearsome rein, 
+### Barbarian: 
+A fierce melee fighter who channels primal rage to devastate enemies. Due to their intense rage and fearsome rein, 
 they will have four attributes - rageCharges, isRaging, ACCURACY_PENALTY, and strengthBonus. rageCharges tracks how many times 
 the Barbarian can activate rage (starting at 3) and isRaging will determine if the character is currently in rage mode. 
 ACCURACY_PENALTY is a constant value of 4 that is subtracted from hit rolls while raging. strengthBonus is derived 
@@ -71,7 +100,8 @@ attacks also gain advantage for the round towards the Barbarian. The Barbarian o
 choose between inRage() and recklessAttack(), and overrides printStats() to display their abilities and rage charges. 
 
 
-Cleric: A devoted healer who channels divine power to restore health and bless allies. To cleanse peoples sins and help
+### Cleric:
+A devoted healer who channels divine power to restore health and bless allies. To cleanse peoples sins and help
 the world, the Cleric has three attributes - healingPower, orbAmount, and wisdomBonus. healingPower is a flat bonus to all healing rolls. 
 orbAmount tracks how many radiant orbs have been charged through successful hits (up to 5), adding bonus damage. wisdomBonus is derived 
 from the Cleric's wisdom stat and is used in both hit and damage rolls. The Cleric has two methods: attack() and heal(). attack() rolls
@@ -80,7 +110,8 @@ based on a dice roll plus healingPower. The Cleric overrides performAction() so 
 overrides printStats() to display their abilities.
 
 
-Ranger: A swift scout who excels at ranged attacks and tracking. As hunters of the wild, they gained these keen intuition skills from 
+### Ranger:
+A swift scout who excels at ranged attacks and tracking. As hunters of the wild, they gained these keen intuition skills from 
 survival of a gruesome forest. The Ranger has four attributes - arrowCount, multiplier, hasHuntersMark, and dexterityBonus. arrowCount()
 tracks the remaining arrows (starting at 10). multiplier is a damage bonus (additional 20%) applied when Hunter's Mark is active. 
 hasHuntersMark tracks whether the Ranger has marked their target. dexterityBonus is derived from the Ranger's agility stat and is used 
@@ -90,7 +121,8 @@ overrides performAction() so the user can choose between shoot() and huntersMark
 number of arrows they have.
 
 
-Sorcerer: A spellcaster who draws magic from within. As they have been studying magic, learning the world, the source of how it came to be,
+### Sorcerer:
+A spellcaster who draws magic from within. As they have been studying magic, learning the world, the source of how it came to be,
 they have gained three attributes - sorceryPoints, hasMagicBarrier, and intelligenceBonus. sorceryPoints tracks remaining spell resources 
 (starting at 2). hasMagicBarrier tracks whether the Sorcerer has an active magic shield. intelligenceBonus is derived from the Sorcerer's 
 intelligence stat and is used in hit and damage rolls. The Sorcerer has two methods: magicShield() and firebolt(). magicShield() costs 
@@ -99,7 +131,7 @@ damage rolls. The Sorcerer overrides performAction() so the user can choose betw
 display their abilities.
 
 -------------------------------------------------------------------------------
-### Program use
+## Why is the program like this?
 To make the program easier to use, input validation was added in main.cpp and in each subclass action menu. 
 If the user enters a number outside the listed choices, or types an invalid response, the program displays an error 
 message and asks again. This makes the interaction clearer and helps prevent the program from behaving unexpectedly.
