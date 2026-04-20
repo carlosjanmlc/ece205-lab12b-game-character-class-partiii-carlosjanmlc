@@ -28,7 +28,7 @@ int Cleric::getHealingPower() const { return healingPower; }
 /// Clerics Methods
 // Method: attack
 void Cleric::attack() {
-    std::cout << getName() << "readies their mace." << std::endl;
+    std::cout << getName() << " readies their mace." << std::endl;
 
     int rollHit = rollDice(20, 1);
     int hit = rollHit + wisdomBonus;
@@ -63,7 +63,7 @@ void Cleric::heal() {
     }
     setHealth(newHP);
 
-    std::cout << getName() << "channels divine energy!" << std::endl;
+    std::cout << getName() << " channels divine energy!" << std::endl;
     std::cout << std::endl;
     std::cout << "Rolled: " << roll << " + Healing Power (" << healingPower << ")  " << " + WIS("
             << wisdomBonus << ") = " <<  healAmount << " HP restored." << std::endl;

@@ -42,7 +42,7 @@ void Sorcerer::magicShield() {
 
 // Method: firebolt
 void Sorcerer::firebolt() {
-    std::cout << getName() << "shoots their firebolt at the enemy!" << std::endl;
+    std::cout << getName() << " shoots their firebolt at the enemy!" << std::endl;
 
     std::cout << std::endl;
     std::cout << getName() << " will need to roll a 8 or more to hit!" << std::endl;

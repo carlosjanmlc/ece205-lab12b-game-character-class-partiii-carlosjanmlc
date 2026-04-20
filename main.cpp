@@ -54,8 +54,6 @@ int main()
         break;
     }
 
-    cout << endl;
-
     while (true) {
         cout << "Enter a profession for your character (0 = Barbarian, 1 = Clerk, 2 = Ranger, 3 = Sorcerer): ";
         cin >> characterProfession;
