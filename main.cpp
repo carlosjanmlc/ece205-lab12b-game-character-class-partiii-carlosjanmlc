@@ -55,7 +55,7 @@ int main()
     }
 
     while (true) {
-        cout << "Enter a profession for your character (0 = Barbarian, 1 = Clerk, 2 = Ranger, 3 = Sorcerer): ";
+        cout << "Enter a profession for your character (0 = Barbarian, 1 = Cleric, 2 = Ranger, 3 = Sorcerer): ";
         cin >> characterProfession;
         if (characterProfession < 0 || characterProfession > 3) {
             cout << "Invalid choice." << endl;
