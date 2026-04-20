@@ -34,6 +34,11 @@ int main()
     string userResponse;
 
     //define variables
+    cout << "========================" << endl;
+    cout << "   CHARACTER CREATION" << endl;
+    cout << "========================" << endl;
+
+    cout << endl;
     cout << "Enter a name for your character: ";
     cin >> characterName;
 
@@ -48,6 +53,8 @@ int main()
         }
         break;
     }
+
+    cout << endl;
 
     while (true) {
         cout << "Enter a profession for your character (0 = Barbarian, 1 = Clerk, 2 = Ranger, 3 = Sorcerer): ";
@@ -81,10 +88,14 @@ int main()
 
     // Perform Action User Interaction
     cout << endl;
+    cout << "========================" << endl;
+    cout << "       GAME STORY" << endl;
+    cout << "========================" << endl;
     typewriter("Game Master: You are wondering around the woods. A wild bear has appeared!"
                 " There is no escape, your character will engage in battle.");
     player1->performAction();
 
+    cout << endl;
 	typewriter("Game Master: Wow. Very talented, you have defeated this wild bear. Go on with your journey!");
 
 

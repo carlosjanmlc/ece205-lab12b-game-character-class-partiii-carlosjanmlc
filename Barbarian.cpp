@@ -38,8 +38,10 @@ void Barbarian::inRage() {
     rageCharges--;
     isRaging = true;
     std::cout << getName() << " enters a furious RAGE!!!" << std::endl;
-    std::cout << "Damage will be doubled, but accuracy is reduced. " << std::endl;
+    std::cout << std::endl;
+    std::cout << "**Damage will be doubled, but accuracy is reduced.**" << std::endl;
     std::cout << "Rage charges remaining: " << rageCharges << std::endl;
+    std::cout << std::endl;
 
     if (isRaging) {
         // Perform rage attack
@@ -49,10 +51,13 @@ void Barbarian::inRage() {
         int damage = (rollDamage + strengthBonus) * 2; // double damage
 
         std::cout << getName() << " attacks in a furious rage! " << std::endl;
+        std::cout << getName() << " will need to roll an 8 or more to hit!" << std::endl;
+        std::cout << std::endl;
         std::cout << "Hit roll: " << rollHit << " + STR(" << strengthBonus << ") - PENALTY(" << ACCURACY_PENALTY << ") = " << hit << std::endl;
+        std::cout << std::endl;
 
         if (rollHit >= 8) {
-            std::cout << "WABAMM!!! "<< getName() << "whacked the enemy hard!" << std::endl;
+            std::cout << "WABAMM!!! "<< getName() << " whacked the enemy hard!" << std::endl;
             std::cout << "Damage dealt: " << rollDamage << "+ STR(" << strengthBonus << ") = " << damage << " (doubled from rage)" << std::endl;
         }
         else {
@@ -75,12 +80,15 @@ void Barbarian::recklessAttack() {
     int damage = best + damageBonus;
 
     std::cout << getName() << " launches a reckless attack! " << std::endl;
+    std::cout << std::endl;
+    std::cout << getName() << " will need to roll a 4 or more to hit!" << std::endl;
     std::cout << "Hit roll: " << roll1 << " and " << roll2 << ". Highest: " << best << std::endl;
     if (best >= 4) {
         std::cout << "Damage dealt: " << best << " + STR bonus(" << damageBonus << ") = " << damage << std::endl;
     }
-
-    std::cout << "WARNING: Enemies also have advantage on attacks against " << getName() << " this round!" << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << "**WARNING: Enemies also have advantage on attacks against " << getName() << " this round!**" << std::endl;
 }
 
 

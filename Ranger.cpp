@@ -49,7 +49,11 @@ void Ranger::shoot() {
     // Shooting action
     arrowCount--;
     std::cout << getName() << " fires an arrow!" << std::endl;
+    std::cout << std::endl;
+    std::cout << getName() << " will need to roll a 8 or more to hit!" << std::endl;
+    std::cout << std::endl;
     std::cout << "Hit roll: " << rollHit << " + AGI(" << dexterityBonus << ") = " << hit << std::endl;
+    std::cout << std::endl;
 	if (rollHit >= 8) {
         std::cout << " THWACK!! " << getName() << " has shot the enemy." << std::endl;
 	    std::cout << "Damage dealt: " << damageRoll << " + AGI(" << dexterityBonus << ") = " << damage << std::endl;

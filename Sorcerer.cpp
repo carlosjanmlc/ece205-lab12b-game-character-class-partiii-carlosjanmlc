@@ -32,6 +32,7 @@ void Sorcerer::magicShield() {
         magicBarrier = true;
         int newDefense = getDefense() + 5;
         setDefense(newDefense);
+        std::cout << std::endl;
         std::cout << getName() << " has formed their shield. Their defense has now increased by 5." << std::endl;
     }
     else {
@@ -41,11 +42,14 @@ void Sorcerer::magicShield() {
 
 // Method: firebolt
 void Sorcerer::firebolt() {
-    std::cout << getName() << "" << std::endl;
+    std::cout << getName() << "shoots their firebolt at the enemy!" << std::endl;
 
+    std::cout << std::endl;
+    std::cout << getName() << " will need to roll a 8 or more to hit!" << std::endl;
     int rollHit = rollDice(20, 1);
     int hit = rollHit + intelligenceBonus;
     std::cout << "Rolled: " << rollHit << " + INT(" << intelligenceBonus << ") = " << hit << std::endl;
+    std::cout << std::endl;
     if (hit >= 8) {
         int rollDamage = rollDice(12, 1);
         int damage =  rollDamage + intelligenceBonus;

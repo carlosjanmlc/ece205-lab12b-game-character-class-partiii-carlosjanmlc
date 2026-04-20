@@ -32,7 +32,10 @@ void Cleric::attack() {
 
     int rollHit = rollDice(20, 1);
     int hit = rollHit + wisdomBonus;
+    std::cout << std::endl;
+    std::cout << getName() << " will need to roll a 8 or more to hit!" << std::endl;
     std::cout << "Rolled: " << rollHit << " + WIS(" << wisdomBonus << ") = " << hit << std::endl;
+    std::cout << std::endl;
     if (hit >= 8) {
         if (orbAmount < 5) {
             orbAmount++;
@@ -61,6 +64,7 @@ void Cleric::heal() {
     setHealth(newHP);
 
     std::cout << getName() << "channels divine energy!" << std::endl;
+    std::cout << std::endl;
     std::cout << "Rolled: " << roll << " + Healing Power (" << healingPower << ")  " << " + WIS("
             << wisdomBonus << ") = " <<  healAmount << " HP restored." << std::endl;
     std::cout << "New health: " << getHealth() << std::endl;
