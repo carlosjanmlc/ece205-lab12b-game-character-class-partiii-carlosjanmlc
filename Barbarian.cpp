@@ -99,6 +99,7 @@ void Barbarian::performAction() {
     std::cout << "What action would you like " << getName() << " to take? " << std::endl;
     std::cout << "1. Rage" << std::endl;
     std::cout << "2. Reckless Attack" << std::endl;
+    std::cout << "► ";
 
     std::cin >> choice;
     switch (choice) {

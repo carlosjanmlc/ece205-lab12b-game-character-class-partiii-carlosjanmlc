@@ -78,6 +78,7 @@ void Cleric::performAction() {
     std::cout << "What action would you like " << getName() << " to take? " << std::endl;
     std::cout << "1. Attack" << std::endl;
     std::cout << "2. Heal" << std::endl;
+    std::cout << "► ";
 
     std::cin >> choice;
     switch (choice) {

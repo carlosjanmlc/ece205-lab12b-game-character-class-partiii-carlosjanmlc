@@ -70,6 +70,7 @@ void Sorcerer::performAction() {
     std::cout << "What action would you like " << getName() << " to take? " << std::endl;
     std::cout << "1. Magic Shield" << std::endl;
     std::cout << "2. Firebolt" << std::endl;
+    std::cout << "► ";
 
     std::cin >> choice;
     switch (choice) {

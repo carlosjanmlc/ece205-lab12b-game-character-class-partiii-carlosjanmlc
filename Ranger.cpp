@@ -80,6 +80,7 @@ void Ranger::performAction() {
     std::cout << "What action would you like " << getName() << " to take? " << std::endl;
     std::cout << "1. Shoot" << std::endl;
     std::cout << "2. Hunter's Mark" << std::endl;
+    std::cout << "► ";
 
     std::cin >> choice;
     switch (choice) {
